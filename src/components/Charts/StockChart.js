@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
 
-export default function StockChart({}) {
+export default function StockChart() {
   const [data] = useState({
     series: [
       {

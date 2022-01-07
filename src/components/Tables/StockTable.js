@@ -6,14 +6,13 @@ export default function StockTable() {
     const [stocks, setStocks] = useState([]);
 
     useEffect(() => {
-        axios.get("http://67.205.128.24/api/stocks")
+        axios.get(process.env.REACT_APP_URL)
         .then((res) => {
             setStocks(res.data);
         })
         .catch(err => err)
       }) 
-  
-
+      
   return (
     <div className='w-full'>
       <div className='w-full flex justify-between items-center pl-2 md:pl-0 mb-8 md:mb-10'>
