@@ -21,8 +21,7 @@ export default function StockTable() {
           Stocks
         </h2>
         <a
-          href='#'
-          className='text-primary-100 bg-indigo-100 px-4 py-1 rounded'>
+          href='#' className='text-primary-100 bg-indigo-100 px-4 py-1 rounded'>
           Buy New
         </a>
       </div>
