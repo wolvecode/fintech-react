@@ -6,7 +6,7 @@ export default function OptionTable() {
    const [stocks, setStocks] = useState([]);
 
     useEffect(() => {
-        axios.get(process.env.url)
+        axios.get("http://67.205.128.24/api/stocks")
         .then((res) => {
             setStocks(res.data);
         })
