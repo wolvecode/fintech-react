@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../../assets/img/logo.png';
 import user from '../../assets/img/user.png';
 import Avatar from '../Avatar';
-import Notification from '../NotificationBell';
+import Notification from '../Notification';
 
 export default function Header() {
   return (

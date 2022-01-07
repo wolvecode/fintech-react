@@ -1,91 +1,18 @@
-import React  from 'react';
-// import axios from 'axios';
+import React,{ useEffect, useState}  from 'react';
+import axios from 'axios';
 import Loader from './TableLoader';
-// import { getStocks } from '@api';
 
 export default function StockTable() {
-    // const [stocks, setStocks] = useState([]);
+    const [stocks, setStocks] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get("localhost:8000/api/stocks")
-    //     .then((res) => {
-    //         setStocks(res.data.data);
-    //         console.log(stocks)
-    //     })
-    //     .catch(err => err)
-    //   }, [stocks]) 
-  const stocks = {
-      data: {
-        "data": [
-            {
-                "type": "stocks",
-                "id": "1",
-                "attributes": {
-                    "name": "Jackson PLC",
-                    "price": "367.060887",
-                    "sell_rate": "21.0",
-                    "rate_change_percent": "17.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            },
-            {
-                "type": "stocks",
-                "id": "2",
-                "attributes": {
-                    "name": "Yandex",
-                    "price": "754.3643104",
-                    "sell_rate": "24.0",
-                    "rate_change_percent": "37.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            },
-            {
-                "type": "stocks",
-                "id": "3",
-                "attributes": {
-                    "name": "JD.com",
-                    "price": "243.4834049",
-                    "sell_rate": "54.0",
-                    "rate_change_percent": "67.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            },
-            {
-                "type": "stocks",
-                "id": "4",
-                "attributes": {
-                    "name": "StoneCo",
-                    "price": "500.59919315",
-                    "sell_rate": "32.0",
-                    "rate_change_percent": "93.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            },
-            {
-                "type": "stocks",
-                "id": "5",
-                "attributes": {
-                    "name": "HDFC Bank",
-                    "price": "515.31577294",
-                    "sell_rate": "41.0",
-                    "rate_change_percent": "44.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            },
-            {
-                "type": "stocks",
-                "id": "6",
-                "attributes": {
-                    "name": "Zoom Holdings",
-                    "price": "373.2001229",
-                    "sell_rate": "10.0",
-                    "rate_change_percent": "21.0",
-                    "created_at": "2022-01-06T08:52:42.000000Z"
-                }
-            }
-        ]
-    }
-  }
+    useEffect(() => {
+        axios.get(process.env.url)
+        .then((res) => {
+            setStocks(res.data);
+        })
+        .catch(err => err)
+      }) 
+  
 
   return (
     <div className='w-full'>
@@ -101,8 +28,8 @@ export default function StockTable() {
       </div>
       <table className='w-full'>
         <tbody className='divide-y divide-gray-200"'> 
-          {stocks.data && Array.isArray(stocks.data.data) ? (
-            stocks.data.data.map(({ id, attributes }) => (
+          {stocks.data && Array.isArray(stocks.data) ? (
+            stocks.data.map(({ id, attributes }) => (
               <tr className='' key={id}>
                 <td>{attributes.name}</td>
                 <td className='px-6 py-4 text-sm text-right'>

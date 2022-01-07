@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import TipImage from '../assets/img/gold-tip.png';
 
 export default function TipsWidget({ tips }) {
@@ -10,7 +9,7 @@ export default function TipsWidget({ tips }) {
       <div className='pl-2 md:pl-0 mb-8 md:mb-10'>
         <h2 className='text-black-900 text-xl font-semibold font-head'>Tips</h2>
       </div>
-      {/** tips container */}
+      {/** tips body */}
       <div className='bg-gray-500 px-6 py-6 rounded-2xl'>
         <div className='flex items-center justify-between mb-5 px-2'>
           {tips.map(({ title }, index) => (
@@ -64,7 +63,3 @@ export default function TipsWidget({ tips }) {
     </div>
   );
 }
-
-TipsWidget.propTypes = {
-  tips: PropTypes.arrayOf(PropTypes.object).isRequired,
-};

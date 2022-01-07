@@ -4,7 +4,7 @@ import  PageLayout  from './components/Layouts/PageLayouts'
 import StockChart from './components/Charts/StockChart';
 import StockTable from './components/Tables/StockTable';
 import OptionTable from './components/Tables/OptionTable'
-import TipsWidget from './components/TipsWidget';
+import TipsWidget from './components/Tips';
 
 function App() {
   const queryClient = new QueryClient();
@@ -12,19 +12,31 @@ function App() {
   const tips = [
     {
       title: 'Gold is up by 20%',
-      description: `The biggest factor behind successful financial technology companies' growth year by year is undoubtedly the customer-oriented services they provide. Startups should satisfy customers with fast and agile solutions suitable for the digital age.`,
+      description: `To offer an inside look into the world of fintech,
+       Trilogy Education Services, a 2U Inc. brand, recently hosted a
+        Tech Talk titled “Breaking Into the Fintech Industry.”`,
     },
     {
-      title: 'Buy with lowest price',
-      description: `New technologies such as artificial intelligence, blockchain, and complex algorithms are areas where financial technology companies are starting to adapt. New technologies provide companies with a variety of possibilities.`,
+      title: 'Learning fintech technology',
+      description: `Did you know that completing a fintech boot
+       camp can prepare you for a variety of roles in this rapidly
+        growing field? Whether you have experience in finance or are
+         just getting started in the field`
     },
     {
-      title: 'Do what is affordable',
-      description: `Regulations, one of the most challenging issues of financial service providers, change over time. Financial technology startups should be prepared for regulations in advance and quickly adapt to these regulations.`,
+      title: 'Regulations',
+      description: `Regulations, one of the most challenging issues of
+       financial service providers, change over time. Financial technology
+        startups should be prepared for regulations in advance and quickly
+         adapt to these regulations.`,
     },
     {
-      title: 'Zoom is up by 20%',
-      description: `The price advantage and trust of companies in the financial sector are very important. Customers act according to the feeling of trust when deciding on the company from which they will perform their financial transactions. `,
+      title: 'Insight',
+      description: `To offer an inside look into the world of fintech,
+       Trilogy Education Services, a 2U Inc. brand, recently hosted a 
+       Tech Talk titled “Breaking Into the Fintech Industry.” During 
+       the discussion, Alison Abbington sat down with Mike McCoy, 
+       Associate Director of Emerging Technology at Humana.`
     },
   ];
   

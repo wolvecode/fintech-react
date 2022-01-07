@@ -6,13 +6,14 @@ export default function OptionTable() {
    const [stocks, setStocks] = useState([]);
 
     useEffect(() => {
-        axios.get("localhost:8000/api/stocks")
+        axios.get(process.env.url)
         .then((res) => {
-            setStocks(res.data.data);
-            console.log(stocks)
+            setStocks(res.data);
         })
         .catch(err => err)
-      }, [stocks]) 
+      }) 
+
+      console.log(stocks)
 
   return (
     <div className='w-full'>
@@ -27,12 +28,12 @@ export default function OptionTable() {
         </a>
       </div>
       <table className='w-full'>
-        <tbody>
-          {stocks.data && Array.isArray(stocks.data.data) ? (
-            stocks.data.data.map(({ id, attributes }) => (
+        <tbody className='divide-y divide-gray-200'>
+          {stocks.data && Array.isArray(stocks.data) ? (
+            stocks.data.map(({ id, attributes }) => (
               <tr key={id}>
                 <td>{attributes.name}</td>
-                <td className='text-right'>
+                <td className='px-6 py-4 text-sm text-right'>
                   <span className='text-primary-500 bg-gray-600 px-1 py-1 text-sm  rounded mr-2'>
                     £{Math.ceil(attributes.price)}
                   </span>

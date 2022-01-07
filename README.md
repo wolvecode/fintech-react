@@ -1,15 +1,15 @@
 ## FinTech
-This repository is private, and it serve the purpose of fufilling a job assessment. Continue reading to get the brief of the tools made use of.
+Fintech Frontend assessment
 
 ## Tools
 1. Node v16
 2. NPM v8
 3. React.js Library
 4. Create-react-app
-5. TailwindCSS
-6. React Icon
-7. React Skeleton Loader
-8. Apex Chart
+5. Apex Chart
+6. React Skeleton Loader
+7. React Icon
+8. TailwindCSS
 9. PSDETCH (for inspecting the XD file)
 
 ## Setup
